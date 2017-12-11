@@ -1,13 +1,3 @@
-
-
-# С помощью какой библиотеки в Python 3 можно работать с JSON файлами?
-
-# Импортируйте необходимые библиотеки
-
-# import 
-
-# pprint позволяет в понятном для человека виде форматировать 'сложные' структуры данных
-
 import json
 import pprint
 
@@ -23,12 +13,15 @@ try:
 except FileExistsError:
 
     print("Файл не найден! Файл должен называться: {}".format(filename))
-    
     status = 'Файл не найден'
 
 
-pprint.pprint(data)
+#pprint.pprint(data)
 
-# Вывести в форматированном виде поля: 
-
-# company, email, phone, address
+print('\n' + '<-'*13 + ' ¯\_(ツ)_/¯ ' + '->'*13 + '\n\n')
+for item in data:
+    print(" Company: " + str(item['company']))
+    print(" Email: " + str(item['email']))
+    print(" Phone: " + str(item['phone']))
+    print(" Address: " + str(item['address']) + '\n')
+    print(' ' + '-*-*'*16 + '\n')
